@@ -47,9 +47,7 @@
 
                 <?php if (has_nav_menu('primary') || has_nav_menu('social')) : ?>
                 
-                                    <div class="header-button">
-                    <button id="menu-toggle" class="menu-toggle"><?php _e('Menu', 'twentysixteen'); ?></button>
-                    </div>
+                
                 
                     <div id="site-header-menu" class="site-header-menu">
                             <?php if (has_nav_menu('primary')) : ?>
@@ -84,6 +82,11 @@
 
                     
             <?php endif; ?>
+                    
+                    <div class="header-button">
+                    <button id="menu-toggle" class="menu-toggle"><?php _e('Menu', 'twentysixteen'); ?></button>
+                </div>
+                    
             </div><!-- .site-header-main -->
 
             <?php if (get_header_image()) : ?>
@@ -105,8 +108,15 @@
                     </a>
                 </div><!-- .header-image -->
         <?php endif; // End header image check. ?>
+                
+                
+                
+                
         </header><!-- .site-header -->
-    </div>
+        
+        
+        
+    </div> <!--full-width-header-->
 	<div class="site-inner">
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
 		

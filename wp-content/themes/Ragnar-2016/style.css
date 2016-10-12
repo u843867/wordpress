@@ -52,20 +52,80 @@ Text Domain: Ragnar-2016
 
 
 /**
+ * 1.0 - Normalize
+ */
+.site {
+    margin: 0;
+}
+
+body {
+
+    background-color: rgba(255, 255, 255, 0);
+}
+
+header.page-header {
+    border-top: none;
+}
+
+
+/**
+ * 6.0 - Navigation
+ */
+
+.comment-navigation a:hover,
+.comment-navigation a:focus,
+.posts-navigation a:hover,
+.posts-navigation a:focus,
+.post-navigation a:hover,
+.post-navigation a:focus,
+.paging-navigation a:hover,
+.paging-navigation a:focus {
+	border-color: #000;
+}
+
+/**
+ * 6.1 - Links
+ */
+
+.post-navigation .post-title {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+
+/**
+ * 6.2 - Menus
+ */
+.comment-navigation a, .posts-navigation a, .post-navigation a, .paging-navigation a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    padding: 1em;
+    border: 1px solid #c3c3c3;
+}
+
+nav.navigation.post-navigation {
+    border: none;
+}
+
+.post-navigation div + div {
+    border-top: 0px solid #1a1a1a;
+}
+
+
+/**
  * 11.1 - Header
  */
 
-
-
 .full-width-header {
-    background-color: #312f2f;
+    background-color: #333333;
 }
 
 .site-header {
     /*padding: 0 4.5455%;*/
     max-width: 1320px;
     margin: auto;
-    background-color: #312f2f;
+    background-color: #333333;
 }
 
 .site-header {
@@ -94,6 +154,27 @@ site-header-main {
     margin-bottom: 0px;
 }
 
+.primary-menu ul li a  {
+    color:#333333;
+}
+
+
+
+.wp-custom-logo .site-title {
+		margin-top: 0em;
+	}
+
+
+.menu-toggle {
+    position: absolute;
+    top: 1%;
+    right: 30px; 
+}
+
+.primary-menu li {
+    padding-left: 1em;
+}
+
 
 .main-navigation a {
     color: #bfbfbf;
@@ -104,11 +185,31 @@ site-header-main {
     float:right;
 }
 
+.menu-toggle {
+    position: absolute;
+}
+
+header.entry-header {
+    padding-top: 1.5em;
+}
+
 /**
- * 11.2 - Header
+ * 11.2 - Posts and pages
  */
 
     
+
+/**
+ * 10.0 - Widgets
+ */
+
+section:first-child {
+        border: none;
+}
+
+.widget {
+    border-top: 1.5px solid #cccccc;
+}
 
 /**
  * 14.0 - Media Queries
@@ -128,6 +229,63 @@ site-header-main {
 	width: device-width;
 }
 
+/**
+ * 14.1 - >= 400px
+ */
+
+@media screen and (min-width: 25em) {
+    
+.nav-links {
+    /*display: flex;*/
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 0;
+}
+ 
+.menu-toggle {
+    position: absolute;
+    top: 0.8%;
+    right: 30px;
+    
+}
+
+.primary-menu ul li a  {
+    color:#bfbfbf;
+}
+
+.comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
+    display: flex;
+    align-items: stretch;
+    float: left;
+    width: 48%;
+}
+
+.nav-previous a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    padding: 1em;
+    border: 1px solid #c3c3c3;
+}
+
+.nav-next {
+        display: flex;
+    align-items: stretch;
+    float: right;
+    text-align: right;
+    width: 48%;
+}
+
+.nav-next a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    padding: 1em;
+    border: 1px solid #c3c3c3;
+}
+
+}
+
 
 /**
  * 14.1 - >= 710px
@@ -135,8 +293,26 @@ site-header-main {
 
 @media screen and (min-width: 44.375em) {
  
+/*    .header-button {
+    margin-left: 20em;
+}*/
 
-	}
+.menu-toggle {
+    position: absolute;
+    top: 0.1%;
+    right: 30px;
+    
+}
+
+.dropdown-toggle {
+
+    color: #d1d1d1;
+}
+
+.post-navigation .post-title {
+    font-size: 1.2em;
+    font-weight: 700;
+}
 
 	
 /*
@@ -145,7 +321,16 @@ site-header-main {
  
 
 */@media screen and (min-width: 48.9375em) {
-  	 
+  
+.menu-toggle {
+    position: absolute;
+    top: 0%;
+    right: 30px;
+    
+}
+
+
+
     
 }/*
 
@@ -158,6 +343,19 @@ site-header-main {
 	.site-header-main {
         padding: 0 4.5455%;
     } 
+    
+    .site-header-menu {
+    margin-left: 11%;
+}
+
+.primary-menu ul li a {
+    color: #555;
+}
+
+/* .header-button {
+    margin-left: 0;
+}*/
+
     
 }/*
 
@@ -180,3 +378,13 @@ site-header-main {
 	
     
 }*/
+
+/**
+ * 11.6 - Footer
+ */
+
+.site-footer {
+    background-color: #333333;
+}
+
+}
