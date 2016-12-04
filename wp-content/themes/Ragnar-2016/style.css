@@ -236,12 +236,15 @@ section:first-child {
 @media screen and (min-width: 25em) {
     
 .nav-links {
-    /*display: flex;*/
+    display: flex;
     justify-content: space-between;
     align-items: stretch;
     padding: 0;
 }
- 
+
+.pagination .nav-links {
+    display: block; 
+}
 .menu-toggle {
     position: absolute;
     top: 0.8%;
