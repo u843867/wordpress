@@ -103,12 +103,10 @@ add_action( 'widgets_init', 'jade_widgets_init' );
  */
 function jade_scripts() {
 	wp_enqueue_style( 'jade-style', get_stylesheet_uri() );
-        
-        wp_enqueue_style('jade-mystyle', get_template_directory_uri() . '/mystyle.css');
-        
-        wp_enqueue_style( 'jade-bootstrapcss', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+              
+        wp_enqueue_style( 'jade-bootstrapcss', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css');
 
-	wp_enqueue_script( 'jade-bootstrapjs', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array(jquery), '20161203', true );
+	wp_enqueue_script( 'jade-bootstrapjs', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js', array(jquery), '20161203', true );
         
         // Fonts: Libre Franklin, https://www.google.com/fonts
         wp_enqueue_style( 'ragnar-google-fonts', '//fonts.googleapis.com/css?family=Libre+Franklin' );
@@ -121,8 +119,25 @@ function jade_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+        
+//        wp_enqueue_style('jade-mystyle', get_template_directory_uri() . '/mystyle.css');
 }
 add_action( 'wp_enqueue_scripts', 'jade_scripts' );
+
+function theme_prefix_setup() {
+	
+	add_theme_support( 'custom-logo', array(
+		'height'      => 100,
+		'width'       => 400,
+		'flex-width' => true,
+	) );
+
+}
+
+
+add_action( 'after_setup_theme', 'theme_prefix_setup' );
+
+
 
 /**
  * Implement the Custom Header feature.
